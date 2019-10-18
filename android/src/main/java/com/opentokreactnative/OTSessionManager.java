@@ -468,7 +468,9 @@ public class OTSessionManager extends ReactContextBaseJavaModule
             disconnectCallback.invoke();
         }
         disconnectCallback = null;
-        printLogs("onDisconnected: Disconnected from session: " + session.getSessionId());
+        if(session != null){
+            printLogs("onDisconnected: Disconnected from session: " + session.getSessionId());
+        }
     }
 
     @Override
@@ -641,7 +643,11 @@ public class OTSessionManager extends ReactContextBaseJavaModule
             }
             sendEventMap(this.getReactApplicationContext(), subscriberPreface +  "onDisconnected", subscriberInfo);
         }
-        printLogs("onDisconnected: Subscriber disconnected. Stream: "+subscriberKit.getStream().getStreamId());
+        if(subscriberKit != null){
+            if(subscriberKit.getStream() != null){
+                printLogs("onDisconnected: Subscriber disconnected. Stream: "+subscriberKit.getStream().getStreamId());
+            }
+        }
     }
 
     @Override
