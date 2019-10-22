@@ -46,8 +46,6 @@ class Utils {
             return "SubscriberPropertyChanged"
         case OTSubscriberVideoEventReason.qualityChanged:
             return "QualityChanged"
-        case OTSubscriberVideoEventReason.codecNotSupported:
-            return "CodecNotSupported"
         }
     }
 }
